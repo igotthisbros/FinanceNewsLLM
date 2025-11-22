@@ -1,2 +1,2 @@
-# stocktrade
-Project on trying to make an auto stock trader
+# financenews
+An LLM that implements RAG to gather Financial news information and provides financial insights to users.

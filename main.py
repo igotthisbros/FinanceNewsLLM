@@ -1,9 +1,19 @@
 import os
 from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+# Load the API key from environment variables
+HF_TOKEN = os.getenv("HF_TOKEN")
+
+if HF_TOKEN is None:
+    raise ValueError("HF_TOKEN not found. Did you create your .env file?")
 
 client = OpenAI(
     base_url="https://models.inference.ai.azure.com",
-    api_key="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"
+    api_key=HF_TOKEN
 )
 
 completion = client.chat.completions.create(
